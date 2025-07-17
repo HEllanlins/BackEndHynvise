@@ -3,7 +3,7 @@ import {
   getSites,
   postSite,
   deleteSite,
-  putSite
+  putSite,
 } from "../controllers/siteController.js";
 
 const router = express.Router();
