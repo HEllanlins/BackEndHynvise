@@ -1,10 +1,10 @@
-import express from "express";
-import {
+const express = require('express');
+const {
   getSites,
   postSite,
   deleteSite,
   putSite,
-} from "../controllers/siteController.js";
+} = require('../controllers/siteController');
 
 const router = express.Router();
 
