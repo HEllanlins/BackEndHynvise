@@ -1,23 +1,22 @@
-// hynvise-api/src/utils/server.js
+// src/server.js
 
 const express = require('express');
 const cors = require('cors');
-const app = express();
+const siteRoutes = require('../routes/siteRoutes'); // Sem extensão .js
 
-// Importar o router corretamente
-const siteRoutes = require('../routes/siteRoutes');
+const app = express();
 
 // Middlewares
 app.use(cors());
 app.use(express.json());
 
+// Rotas
+app.use('/api/sites', siteRoutes); // Todas as rotas de sites ficam sob /api/sites
+
 // Rota de teste
 app.get('/', (req, res) => {
   res.send('API Hynvise rodando com sucesso!');
 });
-
-// Usar as rotas de site
-app.use('/api', siteRoutes); // Agora /api/sites funcionará
 
 // Subir o servidor
 const PORT = process.env.PORT || 3000;

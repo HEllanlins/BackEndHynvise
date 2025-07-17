@@ -13,4 +13,4 @@ router.post("/sites", postSite);
 router.delete("/sites/:id", deleteSite);
 router.put("/sites/:id", putSite);
 
-export default router;
+module.exports = router;
